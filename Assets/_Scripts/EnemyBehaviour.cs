@@ -34,7 +34,7 @@ public class EnemyBehaviour : MonoBehaviour {
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            this.gamecontroller.HealthValue -= 1;
+            this.gamecontroller.LivesValue -= 1;
             this._enemySound.Play();
         }
     }

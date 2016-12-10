@@ -12,10 +12,10 @@ public class Collectables : MonoBehaviour {
 
     //PRIVATE INSTANCE VARIABLES
     private int score = 0;
-    private int treasure = 3;
+    //private int treasure = 3;
 
     private int scorevalue;
-    private int treasurevalue;
+    //private int treasurevalue;
 
 
     // Use this for initialization
@@ -32,18 +32,20 @@ public class Collectables : MonoBehaviour {
     }
 
     private void OnTriggerEnter(Collider other)
-    {//coin trigger increments score
-        if(other.gameObject.CompareTag("Coin"))
+    {
+        //coin trigger increments score
+        if (other.gameObject.CompareTag("Coin"))
         {
-            this.gamecontroller.ScoreValue += 1;
+            this.gamecontroller.ScoreValue += 100;
             Destroy(other.gameObject);
             this.CoinSound.Play();
-        }//bottle pickup
-        if (other.gameObject.CompareTag("Bottle"))
-        {
-            this.gamecontroller.TreasureValue -= 1;
-            Destroy(other.gameObject);
-            this.BottleSound.Play();
+                }
+            //bottle pickup
+            //    if (other.gameObject.CompareTag("Bottle"))
+            //    {
+            //        this.gamecontroller.TreasureValue -= 1;
+            //        Destroy(other.gameObject);
+            //        this.BottleSound.Play();
+            //    }
         }
-    }
 }

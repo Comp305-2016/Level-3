@@ -12,8 +12,10 @@ public class GameController : MonoBehaviour
     //PUBLIC INSTANCE VARIABLES
     [Header("UI Objects")]
     public Text TimerLabel;  // text UI element for displaying timer
-                             // PUBLIC INSTANCE VARIABLES
-    public Text HealthLabel;
+    private int _livesValue;
+
+    // PUBLIC INSTANCE VARIABLES
+    public Text LivesLabel;
     public Text ScoreLabel;
     public Text MissingLabel;
     public Text GameOverLabel;
@@ -51,48 +53,67 @@ public class GameController : MonoBehaviour
         }
     }
 
-    public int TreasureValue
+    //public int TreasureValue
+    //{
+    //    get
+    //    {
+    //        return this._treasureValue;
+    //    }
+
+    //    set
+    //    {
+    //        this._treasureValue = value;
+    //        if (this._treasureValue <= 0)
+    //        {
+    //            this._endGame();
+    //        }
+    //        else
+    //        {
+    //            this.MissingLabel.text = "Missing Treasures:  " + this._treasureValue;
+    //        }
+    //    }
+    //}
+
+    //public int HealthValue
+    //{
+    //    get
+    //    {
+    //        return this._healthValue;
+    //    }
+
+    //    set
+    //    {
+    //        this._healthValue = value;
+    //        if (this._healthValue <= 0)
+    //        {
+    //            this._endGame();
+    //        }
+    //        else
+    //        {
+    //            this.HealthLabel.text = "Health: " + this._healthValue;
+    //        }
+    //    }
+    //}
+    public int LivesValue
     {
         get
         {
-            return this._treasureValue;
+            return this._livesValue;
         }
 
         set
         {
-            this._treasureValue = value;
-            if (this._treasureValue <= 0)
+            this._livesValue = value;
+            if (this._livesValue <= 0)
             {
                 this._endGame();
             }
             else
             {
-                this.MissingLabel.text = "Missing Treasures:  " + this._treasureValue;
+                this.LivesLabel.text = "Lives: " + this._livesValue;
             }
         }
     }
-
-    public int HealthValue
-    {
-        get
-        {
-            return this._healthValue;
-        }
-
-        set
-        {
-            this._healthValue = value;
-            if (this._healthValue <= 0)
-            {
-                this._endGame();
-            }
-            else
-            {
-                this.HealthLabel.text = "Health: " + this._healthValue;
-            }
-        }
-    }
-
 
 
     void Start()
@@ -120,8 +141,8 @@ public class GameController : MonoBehaviour
 	private void _initialize() {
         this._timer = 480.00f;
         this.ScoreValue = 0;
-		this.HealthValue = 5;
-        this.TreasureValue = 3;
+		this.LivesValue = 5;
+        //this.TreasureValue = 3;
 		this.GameOverLabel.gameObject.SetActive (false);
 		this.PointScoreLabel.gameObject.SetActive (false);
 		this.RestartButton.gameObject.SetActive(false);

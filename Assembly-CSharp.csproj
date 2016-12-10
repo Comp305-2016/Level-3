@@ -6,7 +6,7 @@
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
     <RootNamespace></RootNamespace>
-    <ProjectGuid>{994BD481-568E-48F1-60C2-7BA5546592C8}</ProjectGuid>
+    <ProjectGuid>{F6600885-AB69-CC32-5D01-FBB93C6D8264}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <AssemblyName>Assembly-CSharp</AssemblyName>
@@ -96,8 +96,10 @@
      <Compile Include="Assets\_Scripts\Collectables.cs" />
      <Compile Include="Assets\_Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
+     <Compile Include="Assets\_Scripts\GhostEnemyController.cs" />
      <Compile Include="Assets\_Scripts\MenuController.cs" />
      <Compile Include="Assets\_Scripts\PlayerBehaviour.cs" />
+     <Compile Include="Assets\_Scripts\PlayerShooting.cs" />
      <None Include="Assets\_ImportedAsset\Standard Assets\Environment\Water (Basic)\Shaders\FXWaterBasic.shader" />
      <None Include="Assets\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Simple.shader" />
      <None Include="Assets\_ImportedAsset\Standard Assets\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
@@ -120,7 +122,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
-      <Project>{0C8468C1-DC1D-7B19-ECC2-3A0AD443549F}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
+      <Project>{B0C2A44D-DFA6-A707-ED43-609140E9BA51}</Project>      <Name>Assembly-CSharp-firstpass</Name>    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
