@@ -9,7 +9,7 @@ public class EnemyBehaviour : MonoBehaviour {
 
     //PUBLIC INSTANCE VARIABLES
     public NavMeshAgent Agent;
-    public GameController gamecontroller;
+    public GameController1 gamecontroller;
 
 
     //PRIVATE VARIABLES

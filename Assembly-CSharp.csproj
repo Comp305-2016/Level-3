@@ -45,6 +45,14 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\SimpleParticlePack\Scripts\ParticleTester.cs" />
+     <Compile Include="Assets\_ImportedAsset\Assets_FPS_Effects\Scripts\FPS_Effects\FPS_BulletImpacts.cs" />
+     <Compile Include="Assets\_ImportedAsset\Assets_FPS_Effects\Scripts\FPS_Effects\GlobalDefines.cs" />
+     <Compile Include="Assets\_ImportedAsset\Assets_FPS_Effects\Scripts\FPS_Effects\SelfDestruct.cs" />
+     <Compile Include="Assets\_ImportedAsset\Assets_FPS_Effects\Scripts\GameController.cs" />
+     <Compile Include="Assets\_ImportedAsset\Assets_FPS_Effects\Scripts\controller.cs" />
+     <Compile Include="Assets\_ImportedAsset\Assets_FPS_Effects\Scripts\explode.cs" />
+     <Compile Include="Assets\_ImportedAsset\Assets_FPS_Effects\Scripts\explosion_light.cs" />
      <Compile Include="Assets\_ImportedAsset\Standard Assets\Characters\FirstPersonCharacter\Scripts\FirstPersonController.cs" />
      <Compile Include="Assets\_ImportedAsset\Standard Assets\Characters\FirstPersonCharacter\Scripts\HeadBob.cs" />
      <Compile Include="Assets\_ImportedAsset\Standard Assets\Characters\FirstPersonCharacter\Scripts\MouseLook.cs" />
@@ -94,8 +102,11 @@
      <Compile Include="Assets\_ImportedAsset\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\_ImportedAsset\Standard Assets\Utility\WaypointProgressTracker.cs" />
      <Compile Include="Assets\_Scripts\Collectables.cs" />
+     <Compile Include="Assets\_Scripts\EndContoller.cs" />
      <Compile Include="Assets\_Scripts\EnemyBehaviour.cs" />
+     <Compile Include="Assets\_Scripts\EnemyBehaviours.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
+     <Compile Include="Assets\_Scripts\GameController1.cs" />
      <Compile Include="Assets\_Scripts\GhostEnemyController.cs" />
      <Compile Include="Assets\_Scripts\MenuController.cs" />
      <Compile Include="Assets\_Scripts\PlayerBehaviour.cs" />

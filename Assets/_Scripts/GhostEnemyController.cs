@@ -11,7 +11,7 @@ public class GhostEnemyController : MonoBehaviour {
     public float speedz;
 
     public int directionSwitch;
-    public GameController gamecontroller;
+    public GameController1 gamecontroller;
 
     public AudioSource hurtSound;
 

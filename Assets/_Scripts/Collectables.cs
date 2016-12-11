@@ -1,14 +1,14 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
-using System.Collections;
+using System.Collections.Generic;
 
 public class Collectables : MonoBehaviour {
     //PUBLIC INSTANCE VARIABLES
-    public GameController gamecontroller;
+    public GameController1 gamecontroller;
 
     [Header("Sound Clips")]
     public AudioSource CoinSound;
-    public AudioSource BottleSound;
+    //public AudioSource BottleSound;
 
     //PRIVATE INSTANCE VARIABLES
     private int score = 0;
@@ -18,28 +18,43 @@ public class Collectables : MonoBehaviour {
     //private int treasurevalue;
 
 
+    //pooling coins
+ 
+    //public int CoinNumber;
+    //public Transform SpawnPoint;
+
+
+
+
+
     // Use this for initialization
 
 
     // Update is called once per frame
     void Update () {
-	
-	}
-
-    void Start()
-    {
 
     }
 
-    private void OnTriggerEnter(Collider other)
+    void Start()
+    {
+        //this.Player.transform.position = SpawnPoint.position; // spawn the player at the SpawnPoint
+
+
+
+    }
+
+
+
+
+private void OnTriggerEnter(Collider other)
     {
         //coin trigger increments score
         if (other.gameObject.CompareTag("Coin"))
         {
-            this.gamecontroller.ScoreValue += 100;
+            //this.gamecontroller.ScoreValue += 100;
             Destroy(other.gameObject);
             this.CoinSound.Play();
-                }
+        }
             //bottle pickup
             //    if (other.gameObject.CompareTag("Bottle"))
             //    {
