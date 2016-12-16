@@ -101,12 +101,13 @@
      <Compile Include="Assets\_ImportedAsset\Standard Assets\Utility\TimedObjectDestructor.cs" />
      <Compile Include="Assets\_ImportedAsset\Standard Assets\Utility\WaypointCircuit.cs" />
      <Compile Include="Assets\_ImportedAsset\Standard Assets\Utility\WaypointProgressTracker.cs" />
+     <Compile Include="Assets\_Scripts\Coin.cs" />
      <Compile Include="Assets\_Scripts\Collectables.cs" />
      <Compile Include="Assets\_Scripts\EndContoller.cs" />
      <Compile Include="Assets\_Scripts\EnemyBehaviour.cs" />
      <Compile Include="Assets\_Scripts\EnemyBehaviours.cs" />
      <Compile Include="Assets\_Scripts\GameController.cs" />
-     <Compile Include="Assets\_Scripts\GameController1.cs" />
+     <Compile Include="Assets\_Scripts\GameController2.cs" />
      <Compile Include="Assets\_Scripts\GhostEnemyController.cs" />
      <Compile Include="Assets\_Scripts\MenuController.cs" />
      <Compile Include="Assets\_Scripts\PlayerBehaviour.cs" />

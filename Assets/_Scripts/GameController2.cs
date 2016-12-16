@@ -1,11 +1,19 @@
 ﻿using UnityEngine;
 using UnityEngine.UI;
 using System;
-using System.Collections.Generic;
 using System.Collections;
+
+using System.Collections.Generic;
 
 
 public class GameController1 : MonoBehaviour {
+    public Transform SpawnPoint;
+    public GameObject Player;
+    public GameObject Coin;
+
+    public int MaxCoins = 20;
+
+    public List<GameObject> CoinPool;
 
     //PRIVATE INSTANCE VARIABLES
     private float _timer;
@@ -31,18 +39,10 @@ public class GameController1 : MonoBehaviour {
     private AudioSource[] _audioSources;
     private AudioSource _gameSound;
     //private AudioSource _gameOverSound;
-    private AudioListener _gameOverListener;
+    //private AudioListener _gameOverListener;
     private int minutes;
     private int seconds;
     public AudioSource _gameOverSound;
-
-
-    public Transform SpawnPoint;
-    public GameObject Player; // player prefab
-    public GameObject Coin; // coin prefab
-    public int MaxCoins = 20;
-
-    private List<GameObject> CoinPool; // reference to the CoinPool List
 
     // PUBLIC ACCESS METHODS
     public int ScoreValue
@@ -113,7 +113,7 @@ public class GameController1 : MonoBehaviour {
             this._livesValue = value;
             if (this._livesValue <= 0)
             {
-                this._endGame();
+                //this._endGame();
             }
             else
             {
@@ -125,8 +125,8 @@ public class GameController1 : MonoBehaviour {
 
     void Start()
     {
-        Instantiate(this.Player);
-        this.Player.transform.position = SpawnPoint.position; // spawn the player at the SpawnPoint
+        //Instantiate(this.Player);
+        //this.Player.transform.position = SpawnPoint.position; // spawn the player at the SpawnPoint
         this._initialize();
         this.CoinPool = new List<GameObject>(); // initialize the CoinPool
         this.BuildCoinPool();
@@ -136,6 +136,8 @@ public class GameController1 : MonoBehaviour {
     // Update is called once per frame
     void Update()
     {
+        this.PlaceCoins();
+
 
         if (_timer > 1)
         {
@@ -143,9 +145,8 @@ public class GameController1 : MonoBehaviour {
         }
         else
         {
-            this._endGame();
+            //this._endGame();
         }
-        this.PlaceCoins();
     }
 
     //PRIVATE METHODS ++++++++++++++++++
@@ -161,7 +162,7 @@ public class GameController1 : MonoBehaviour {
         this.PointScoreLabel.gameObject.SetActive(false);
         this.RestartButton.gameObject.SetActive(false);
 
-        this._gameOverListener = gameObject.GetComponent<AudioListener>();
+        //this._gameOverListener = gameObject.GetComponent<AudioListener>();
         this._audioSources = gameObject.GetComponents<AudioSource>();
         this._gameSound = this._audioSources[0];
         this._gameOverSound = this._audioSources[1];
@@ -170,20 +171,20 @@ public class GameController1 : MonoBehaviour {
 
     }
 
-    private void _endGame()
-    {
-        //this.PointScoreLabel.text = "Final Score: " + (this._scoreValue * 10);
-        this.GameOverLabel.gameObject.SetActive(true);
-        //this.PointScoreLabel.gameObject.SetActive (true);
-        this.RestartButton.gameObject.SetActive(true);
-        //this.HealthLabel.gameObject.SetActive (false);
-        //this.MissingLabel.gameObject.SetActive(false);
-        //this.ScoreLabel.gameObject.SetActive (false);
-        this.player.gameObject.SetActive(false);
-        this._gameOverListener.enabled = true;
-        //this._gameSound.Stop ();
-        //this._gameOverSound.Play ();
-    }
+    //private void _endGame()
+    //{
+    //    //this.PointScoreLabel.text = "Final Score: " + (this._scoreValue * 10);
+    //    this.GameOverLabel.gameObject.SetActive(true);
+    //    //this.PointScoreLabel.gameObject.SetActive (true);
+    //    this.RestartButton.gameObject.SetActive(true);
+    //    //this.HealthLabel.gameObject.SetActive (false);
+    //    //this.MissingLabel.gameObject.SetActive(false);
+    //    //this.ScoreLabel.gameObject.SetActive (false);
+    //    this.player.gameObject.SetActive(false);
+    //    this._gameOverListener.enabled = true;
+    //    //this._gameSound.Stop ();
+    //    //this._gameOverSound.Play ();
+    //}
 
     private void BuildCoinPool()
     {
@@ -202,14 +203,14 @@ public class GameController1 : MonoBehaviour {
             if (!coin.activeInHierarchy)
             { // search the pool for a coin that is not in the scene
                 coin.SetActive(true); // place the coin in the scene
-               // coin.transform.position = new Vector3(Random.Range(-20f, 20f), 20, Random.Range(-20f, 20f));
+                coin.transform.position = new Vector3(UnityEngine.Random.Range(-20f, 20f), 20, UnityEngine.Random.Range(-20f, 20f));
             }
         }
-    
-}
-// PUBLIC METHODS
 
-public void onTime()
+    }
+    // PUBLIC METHODS
+
+    public void onTime()
     {
         _timer -= Time.deltaTime;
         minutes = Mathf.FloorToInt(_timer / 60F);
